@@ -11,6 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script type="text/javascript" src="js/pikaday.js"></script>
     <script type="text/javascript" src="js/chart.js"></script>
@@ -162,7 +163,13 @@
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),  0 1px .2rem rgba(0, 0, 0, 0.12), 0 1px .3rem rgba(0, 0, 0, 0.12);
         padding:4px;
         z-index: 99999;
+
+        -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+
+
     }
+
 
     .popup-ct {
         background:#fff;
@@ -317,47 +324,91 @@
     /*position*/
 
     .bottom-right {
-        bottom: 16px;
         right: 16px;
+        bottom:-320px;
     }
 
     .bottom-left {
-        bottom: 16px;
         left: 16px;
+        bottom:-320px;
+
+    }
+
+    .popup.active.bottom-left,
+    .popup.active.bottom-right {
+        bottom: 16px;
     }
 
     .modalbox {
-        top:50%;
+        top:-320px;
         left:50%;
         margin:-120px 0 0 -160px;
+             -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    }
+
+    .modalbox.active {
+        top:50%;
+
     }
 
     .popup-overlay {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         position: fixed;
-        top:0;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 88888;
-        background:rgba(0,0,0,0.6);
-        display: none;
+        background: rgba(0, 0, 0, 0.64);
+        z-index: -9;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .popup-overlay.active {
+        visibility: visible;
+    z-index: 1100;
+    opacity: 1;
+    -webkit-transition: opacity 0.1s;
+    -moz-transition: opacity 0.1s;
+    transition: opacity 0.1s;
     }
 
     .modalbox.active + .popup-overlay {
-        display: block;
+        visibility: visible;
+        z-index: 1100;
+        opacity: 1;
+        -webkit-transition: opacity 0.1s;
+        -moz-transition: opacity 0.1s;
+        transition: opacity 0.1s;
+    }
+
+    .bottom-left + .popup-overlay,
+    .bottom-right + .popup-overlay {
+        display: none !important;
     }
 
     @media (max-width: 320px) {
         .popup {
             max-width: 300px !important;
-            bottom:auto !important;
-            right: auto !important;
             left: 50% !important;
-            top:80px !important;
             margin:0 0 0  -150px !important;
         }
+
+        .bottom-left + .popup-overlay,
+    .bottom-right + .popup-overlay {
+        display: block !important;
+    }
+
         .popup.active + .popup-overlay {
             display: block;
+            visibility: visible;
+        z-index: 1100;
+        opacity: 1;
+        -webkit-transition: opacity 0.1s;
+        -moz-transition: opacity 0.1s;
+        transition: opacity 0.1s;
         }
     }
 </style>
@@ -367,31 +418,62 @@
 </div>
 
 
-<div class="popup default modalbox active">
-    <a href="javascript:void(0);" class="popup-close"><span>&times;</span></a>
-    <div class="popup-ct">
-        <div class="popup-cta">
-            Webinar: 5 Hal Yang Harus Anda Lakukan Jika Omset Bisnis Anda Belum Mencapau 100 Juta
-        </div>
-        <div class="popup-cr">
-            <div class="popup-lbl">
-                Daftarkan email Anda
+    <div class="popup red bottom-right">
+        <div style="font-size:12px;position:absolute;top:-20px;left:4px;color:#999;">preview</div>
+        <a href="javascript:void(0);" class="popup-close"><span>&times;</span></a>
+        <div class="popup-ct">
+            <div class="popup-cta">
+                Webinar: 5 Hal Yang Harus Anda Lakukan Jika Omset Bisnis Anda Belum Mencapau 100 Juta
             </div>
-            <div class="popup-form">
-                <div class="popup-inp">
-                    <input type="email" placeholder="Email">
+            <div class="popup-cr">
+                <div class="popup-lbl">
+                    Daftarkan email Anda
                 </div>
-                <div class="popup-btn">
-                    <button class="btn">Submit</button>
+                <div class="popup-form">
+                    <div class="popup-inp">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="popup-btn">
+                        <button class="btn">Submit</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="popup-nts">
+
+            <div class="popup-nts">
             Lorem ipsum dolor sit amet
+            </div>
         </div>
     </div>
-</div>
-<div class="popup-overlay"></div>
+    <div class="popup-overlay"></div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.onload = function() {
+            setTimeout(function(){
+                $('.popup').addClass('active');
+                $('.popup-overlay').addClass('active');
+            }, 2000);
+
+        };
+    
+        $('.popup-close, .popup-overlay').on('click', function () {
+            $('.popup').removeClass('active');
+            $('.popup-overlay').removeClass('active');
+
+            setTimeout(function(){
+                $('.popup').addClass('active');
+                $('.popup-overlay').addClass('active');
+
+            }, 2000);
+        });
+    });
+</script>
+
+
+
+
 
     </div>
 

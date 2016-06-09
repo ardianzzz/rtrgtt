@@ -50,16 +50,23 @@
         display: block;
     }
     
+
+
     .popup {
-        width: 32rem;
-        position: absolute;
-        bottom: 1.6rem;
-        right: 1.6rem;
+        width: 320px;
+        position: fixed;
         background: #ffffff;
-        border-radius: .4rem;
-        box-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.12),  0 .1rem .2rem rgba(0, 0, 0, 0.12), 0 .1rem .3rem rgba(0, 0, 0, 0.12);
-        padding:.4rem;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),  0 1px .2rem rgba(0, 0, 0, 0.12), 0 1px .3rem rgba(0, 0, 0, 0.12);
+        padding:4px;
+        z-index: 99999;
+
+        -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+
+
     }
+
 
     .popup-ct {
         background:#fff;
@@ -88,7 +95,7 @@
         display: table-cell;
         vertical-align: middle;
         width: 100%;
-        padding: 0 .8rem 0 0;
+        padding: 0 8px 0 0;
     }
     
     .popup-inp input {
@@ -97,10 +104,18 @@
         width: 100%;
         line-height: 2.4rem;
         padding: 8px;
-        border: solid .1rem #d7d7d7;
+        border: solid 1px #d7d7d7;
         background: #fff;
         font: inherit;
         font-size: 14px;
+        border-radius: 3px;
+        box-sizing: 0 1px 3px rgba(0,0,0,0.2) inset;
+        outline:none !important;
+    }
+
+    .popup-inp input:focus {
+        border-color:#999;
+        background:#ffffee;
     }
     
     .popup-btn {
@@ -111,14 +126,13 @@
     .popup-btn .btn {
         -webkit-appearance: none;
         display: block;
-        border: solid 1px #e67e22;
         font: inherit;
         font-size: 14px;
         padding: 8px;
         border-radius: 3px;
-        background: #e67e22;
         color: #fff;
         font-weight: 700;
+        outline: 0 !important;
     }
 
     .popup-lbl {
@@ -132,14 +146,180 @@
         padding:12px 16px;
         border-top:solid 1px #e6e6e6;
     }
+
+
+    .popup-close {
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background:#bdc3c7;
+        position: absolute;
+        top:8px;
+        right: 8px;
+        overflow: hidden;
+    }
+
+    .popup-close:hover {
+        background:#c0392b;
+    }
+
+    .popup-close span {
+        color: #fff;
+        width: 16px;
+        height: 16px;
+        display: block;
+        line-height: 17px;
+        text-align: center;
+    }
+
+/*theme*/
+
+    .yellow {
+        background:#f1c40f;
+    }
+    .yellow.popup-btn .btn {
+        background:#f39c12;
+    }
+
+    .green {
+        background:#1abc9c;
+    }
+    .green .popup-btn .btn {
+        background:#16a085;
+    }
+
+    .blue {
+        background:#3498db;
+    }
+    .blue .popup-btn .btn {
+        background:#2980b9;
+    }
+
+    .purple {
+        background:#9b59b6;
+    }
+    .purple .popup-btn .btn {
+        background:#8e44ad;
+    }
+
+    .red {
+        background:#e74c3c;
+    }
+    .red .popup-btn .btn {
+        background:#c0392b;
+    }
+
+    .default {
+        background:#34495e;
+    }
+    .default .popup-btn .btn {
+        background:#2c3e50;
+    }
+
+
+    /*position*/
+
+    .bottom-right {
+        right: 16px;
+        bottom:-320px;
+    }
+
+    .bottom-left {
+        left: 16px;
+        bottom:-320px;
+
+    }
+
+    .popup.active.bottom-left,
+    .popup.active.bottom-right {
+        bottom: 16px;
+    }
+
+    .modalbox {
+        top:-320px;
+        left:50%;
+        margin:-120px 0 0 -160px;
+             -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    }
+
+    .modalbox.active {
+        top:50%;
+
+    }
+
+    .popup-overlay {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.64);
+        z-index: -9;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .popup-overlay.active {
+        visibility: visible;
+    z-index: 1100;
+    opacity: 1;
+    -webkit-transition: opacity 0.1s;
+    -moz-transition: opacity 0.1s;
+    transition: opacity 0.1s;
+    }
+
+    .modalbox.active + .popup-overlay {
+        visibility: visible;
+        z-index: 1100;
+        opacity: 1;
+        -webkit-transition: opacity 0.1s;
+        -moz-transition: opacity 0.1s;
+        transition: opacity 0.1s;
+    }
+
+    .bottom-left + .popup-overlay,
+    .bottom-right + .popup-overlay {
+        display: none !important;
+    }
+
+    @media (max-width: 320px) {
+        .popup {
+            max-width: 300px !important;
+            left: 50% !important;
+            margin:0 0 0  -150px !important;
+        }
+
+        .bottom-left + .popup-overlay,
+    .bottom-right + .popup-overlay {
+        display: block !important;
+    }
+
+        .popup.active + .popup-overlay {
+            display: block;
+            visibility: visible;
+        z-index: 1100;
+        opacity: 1;
+        -webkit-transition: opacity 0.1s;
+        -moz-transition: opacity 0.1s;
+        transition: opacity 0.1s;
+        }
+    }
     </style>
 </head>
 
 <body>
     <div class="iframe">
-        <iframe width="100%" height="100%" frameborder="0" src="http://detik.com"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" src="//marimakan.id"></iframe>
     </div>
-    <div class="popup" style="background:#f1c40f;">
+
+
+
+    <div class="popup red bottom-left">
+        <a href="javascript:void(0);" class="popup-close"><span>&times;</span></a>
         <div class="popup-ct">
             <div class="popup-cta">
                 Webinar: 5 Hal Yang Harus Anda Lakukan Jika Omset Bisnis Anda Belum Mencapau 100 Juta
@@ -163,6 +343,36 @@
             </div>
         </div>
     </div>
+    <div class="popup-overlay"></div>
+
+
+
+
+
+
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.onload = function() {
+            setTimeout(function(){
+                $('.popup').addClass('active');
+                $('.popup-overlay').addClass('active');
+            }, 2000);
+
+        };
+    
+        $('.popup-close, .popup-overlay').on('click', function () {
+            $('.popup').removeClass('active');
+            $('.popup-overlay').removeClass('active');
+
+            setTimeout(function(){
+                $('.popup').addClass('active');
+                $('.popup-overlay').addClass('active');
+
+            }, 2000);
+        });
+    });
+</script>
 </body>
 
 </html>
