@@ -176,11 +176,9 @@
             <div class="chart">
                 <canvas id="lineChart" width="400" height="120"></canvas>
             </div>
-
             <div style="text-align:right;margin:0 0 1.2rem">
-            <button class="btn btn--default btn--small">Download CSV</button>
+                <button class="btn btn--default btn--small">Download CSV</button>
             </div>
-
             <table class="table table--plain">
                 <thead>
                     <tr>
@@ -261,32 +259,27 @@ var line = document.getElementById("lineChart");
 var lineChart = new Chart(line, {
     type: 'line',
     data: {
-        labels: ["2014-09-08", "2014-09-09", "2014-09-10", "2014-09-11", "2014-09-12", "2014-09-13", "2014-09-14", "2014-09-15", "2014-09-16", "2014-09-17", "2014-09-18", "2014-09-19"],
+        labels: ["01/06/16", "02/06/16", "03/06/16", "04/06/16", "05/06/16", "06/06/16", "07/06/16", "08/06/16", "09/06/16", "10/06/16", "11/06/16", "12/06/16", "13/06/16", "14/06/16", "15/06/16", "16/06/16", "17/06/16", "18/06/16", "19/06/16", "20/06/16", "21/06/16", "22/06/16", "23/06/16", "24/06/16", "25/06/16", "26/06/16", "27/06/16", "28/06/16", "29/06/16", "30/06/16", ],
         datasets: [{
             label: 'Visitors',
-            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            data: [23, 15, 67, 0, 48, 32, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                
+            backgroundColor: "rgba(52, 152, 219, 0.2)",
+            borderColor: "rgba(52, 152, 219, 0.4)",
             borderWidth: 1
         }]
     },
     options: {
-
         scales: {
             yAxes: [{
-                display: false
-            }],
-            xAxes: [{
-                type: 'time',
-                time: {
-                    displayFormats: {
-                        day: 'L'
-                    }
-                }
+                display: true
             }],
         }
     }
 });
-</script>
 
+
+</script>
 
     </div>
 
