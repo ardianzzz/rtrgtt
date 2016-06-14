@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
@@ -55,10 +53,10 @@
     
     <div class="page-header">
         <div class="breadcrumbs">
-            <a href="/">Back</a>
+            <a href="/">« Back</a>
         </div>
         <div class="page-title">
-            Create Retarget URL
+            Create Pixel Tracking
         </div>
     </div>
 
@@ -66,59 +64,41 @@
     <div class="row">
         <div class="col col--8">
             <div class="form-group">
-                <label>Pilih domain</label>
-                <select class="form-control">
-                    <option>http://linku.xyz</option>
-                    <option>http://beli.top</option>
-                    <option>http://lerpe.bike</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Nama audiens</label>
+                <label>Audience name</label>
                 <input type="text" class="form-control" style="width:100%;">
-            </div>
-            <div class="form-group">
-                <label>Retarget URL</label>
-                <input type="text" class="form-control" style="width:100%;" readonly>
-            </div>
-            <div class="form-group">
-                <label>Event tracking</label>
-                <select class="form-control">
-                    <option>PageView</option>
-                    <option>Custom</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Pixel type optional</label>
-                <select class="form-control">
-                    <option>Lead</option>
-                    <option>Complete registration</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Pixel ID</label>
-                <div class="row">
-                    <div class="col col--9">
-                        <input type="text" class="form-control" style="width:100%;">
-                    </div>
-                    <div class='col col--3'>
-                        <button class="btn btn--default btn--block">Preview</button>
-                    </div>
-                </div>
             </div>
             <div class="form-group">
                 <label>Target URL</label>
-                <input type="text" class="form-control" style="width:100%;">
+                <input type="url" class="form-control" style="width:100%;" readonly>
+            </div>
+
+            <div class="row">    
+                <div class="col col--4">
+                    <div class="form-group">
+                        <label>Event tracking</label>
+                        <select class="form-control" style="width:100%;">
+                            <option>PageView</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col col--8">
+                    <div class="form-group">
+                        <label>Pixel ID</label>
+                        <div class="row">
+                            <div class="col col--7">
+                                <input type="text" class="form-control" style="width:100%;">
+                            </div>
+                            <div class='col col--5'>
+                                <button class="btn btn--default btn--block">Pixel manager</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="form-action">
                 <button class="btn btn--default">Cancel</button>
                 &nbsp;
-                <button class="btn btn--primary">Create Retarget URL</button>
-            </div>
-        </div>
-        <div class="col col--4">
-            <div class="help-card">
-                Help
+                <button class="btn btn--primary">Create Pixel Tracking</button>
             </div>
         </div>
     </div>
@@ -130,7 +110,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            &copy; 2016
+            2016 &copy; The Builder
         </div>
     </footer>
 

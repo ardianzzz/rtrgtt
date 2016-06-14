@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
@@ -55,7 +53,7 @@
     
     <div class="page-header">
         <div class="breadcrumbs">
-            <a href="/">Back</a>
+            <a href="/">« Back</a>
         </div>
         <div class="page-title">
         Create Email Opt-in
@@ -66,20 +64,12 @@
     <div class="row">
         <div class="col col--8">
             <div class="form-group">
-                <label>Pilih domain</label>
-                <select class="form-control">
-                    <option>http://linku.xyz</option>
-                    <option>http://beli.top</option>
-                    <option>http://lerpe.bike</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Nama audiens</label>
+                <label>Audience name</label>
                 <input type="text" class="form-control" style="width:100%;">
             </div>
             <div class="form-group">
                 <label>Target URL</label>
-                <input type="text" class="form-control" style="width:100%;">
+                <input type="url" class="form-control" style="width:100%;">
             </div>
 
             <div class="form-title">
@@ -103,7 +93,7 @@
             </div>
 
             <div class="row">
-            <div class="col col--6">
+            <div class="col col--4">
                 <div class="form-group">
                     <label>Theme color</label>
                     <select class="form-control" style="width:100%">
@@ -117,7 +107,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col col--6">
+            <div class="col col--4">
                 <div class="form-group">
                     <label>Position</label>
                     <select class="form-control" style="width:100%">
@@ -254,19 +244,18 @@
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background:#bdc3c7;
         position: absolute;
         top:8px;
         right: 8px;
         overflow: hidden;
+        color: #808080;
     }
 
     .popup-close:hover {
-        background:#c0392b;
+        color:#666;
     }
 
     .popup-close span {
-        color: #fff;
         width: 16px;
         height: 16px;
         display: block;
@@ -478,7 +467,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            &copy; 2016
+            2016 &copy; The Builder
         </div>
     </footer>
 

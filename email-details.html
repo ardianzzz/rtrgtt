@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
@@ -251,54 +249,47 @@ var line = document.getElementById("lineChart");
 var lineChart = new Chart(line, {
     type: 'line',
     data: {
-        labels: ["01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06", "08/06", "09/06", "10/06", "11/06", "12/06", "13/06", "14/06", "15/06", "16/06", "17/06", "18/06", "19/06", "20/06", "21/06", "22/06", "23/06", "24/06", "25/06", "26/06", "27/06", "28/06", "29/06", "30/06", ],
-        // datasets: [{
-        //     label: 'Visitors',
-        //     data: [23, 15, 67, 0, 48, 32, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-                
-        //     backgroundColor: "rgba(52, 152, 219, 0.2)",
-        //     borderColor: "rgba(52, 152, 219, 0.4)",
-        //     borderWidth: 1
-        // }],
-
-            scaleFontSize: 10,
-
-
+        labels: ["01-06-16", "02-06-16", "03-06-16", "04-06-16", "05-06-16", "06-06-16", "07-06-16", "08-06-16", "09-06-16", "10-06-16", "11-06-16", "12-06-16", "13-06-16", "14-06-16", "15-06-16", "16-06-16", "17-06-16", "18-06-16", "19-06-16", "20-06-16", "21-06-16", "22-06-16", "23-06-16", "24-06-16", "25-06-16", "26-06-16", "27-06-16", "28-06-16", "29-06-16", "30-06-16", ],
         datasets: [{
-            label: 'Visitors',
+            label: 'Users',
+            data: [1, 0, 5, 0, 3, 0, 13, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+backgroundColor: "rgba(231, 76, 60,.2)",
+            borderColor: "rgba(231, 76, 60,.4)",
+            
+            borderWidth: 1
+        }, {
+            label: 'Sessions',
+            data: [4, 0, 18, 0, 11, 0, 34, 0, 0, 0, 1, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+
             backgroundColor: "rgba(52, 152, 219, 0.2)",
             borderColor: "rgba(52, 152, 219, 0.4)",
-            data: [23, 15, 67, 0, 48, 32, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-            borderWidth: 1,
-
-
-          }, {
-
-            label: 'Subscribers',
-            backgroundColor: "rgba(230, 126, 34,0.2)",
-            borderColor: "rgba(230, 126, 34,.4)",
-            data: [3, 5, 7, 0, 8, 2, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
             borderWidth: 1
-          }]
+        }, {
+            label: 'Pageviews',
+            data: [23, 0, 67, 0, 48, 0, 190, 0, 0, 0, 1, 0, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+
+            backgroundColor: "rgba(46, 204, 113,.2)",
+            borderColor: "rgba(46, 204, 113,.4)",
+            borderWidth: 1
+        }]
     },
     options: {
         scales: {
             yAxes: [{
                 display: true
             }],
-        },
+        }
     }
 });
-
-
 </script>
+
 
     </div>
 
 
     <footer class="site-footer">
         <div class="container">
-            &copy; 2016
+            2016 &copy; The Builder
         </div>
     </footer>
 
