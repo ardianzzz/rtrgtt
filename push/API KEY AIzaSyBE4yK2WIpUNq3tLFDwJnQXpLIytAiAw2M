@@ -1,0 +1,7 @@
+API KEY AIzaSyBE4yK2WIpUNq3tLFDwJnQXpLIytAiAw2M
+Proj Num 379067642190
+
+
+https://android.googleapis.com/gcm/send/dT4-zYECH58:APA91bF0wWSljRMIT7I279YjDfqT1IlGaHCT4HHNb4kn4-w2ZtY_W6fW5MEuEzM2mIO-RPpVO-pRhgdg8WplKhzJBTcMF9XS7-X9lCkpMZWKNiZS6KqqcZYj4G9MHzkvu3Iulkf0BY57
+
+curl --header "Authorization: key=AIzaSyBE4yK2WIpUNq3tLFDwJnQXpLIytAiAw2M" --header "Content-Type: application/json" https://android.googleapis.com/gcm/send -d "{\"registration_ids\":[\"dT4-zYECH58:APA91bF0wWSljRMIT7I279YjDfqT1IlGaHCT4HHNb4kn4-w2ZtY_W6fW5MEuEzM2mIO-RPpVO-pRhgdg8WplKhzJBTcMF9XS7-X9lCkpMZWKNiZS6KqqcZYj4G9MHzkvu3Iulkf0BY57\"]}"
